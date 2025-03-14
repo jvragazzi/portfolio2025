@@ -32,7 +32,7 @@ const projects = [
 
 const Projects: FC = () => {
   return (
-    <section className="section">
+    <section className="section" id="projetos">
       <div className="container">
         <h2 className="text-4xl md:text-7xl lg:text-8xl">Projetos</h2>
         <div className="mt-10 md:mt-16 lg:mt-20">

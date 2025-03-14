@@ -26,12 +26,12 @@ const navItems = [
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-stone-900 text-white">
+    <footer className="bg-stone-900 text-white" id="contato">
       <div className="container">
         <div className="section">
           <div className="grid md:grid-cols-3">
             <div className="md:col-span-2">
-              <h2 className="text-4xl md:text-7xl mt-8 font-extralight">
+              <h2 className="text-4xl md:text-7xl font-extralight">
                 Entre em contato, vamos trabalhar juntos!
               </h2>
               <div className="mt-10 md:col-span-2">

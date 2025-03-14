@@ -4,7 +4,7 @@ import { FC } from "react";
 
 const Technologies: FC = () => {
   return (
-    <section className="section">
+    <section className="section" id="tecnologias">	  
       <div>
         <h2 className="text-4xl md:text-7xl lg:text-8xl flex flex-col uppercase overflow-hidden">
           <span className="whitespace-nowrap">
