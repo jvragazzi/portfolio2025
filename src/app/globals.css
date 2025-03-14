@@ -13,3 +13,7 @@
 .word {
   @apply translate-y-full
 }
+
+html {
+  scroll-behavior: smooth;
+}

@@ -127,14 +127,14 @@ const Header: FC = () => {
 
     const target = document.querySelector(hash);
 
-    if (!target) return
+    if (!target) return;
     target.scrollIntoView({ behavior: "smooth" });
-  }
+  };
 
   return (
     <header id="intro">
       <div
-        className="fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-900 z-10"
+        className="fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-600 z-10"
         ref={navScope}
       >
         <nav className="mt-20 flex flex-col">
@@ -142,12 +142,12 @@ const Header: FC = () => {
             <a
               href={href}
               key={label}
-              className="text-stone-200 border-t last:border-b border-stone-800 py-8 group/nav-item relative isolate"
+              className="text-stone-200 border-t last:border-b border-white py-8 group/nav-item relative isolate"
               onClick={handleClickMobileNavItem}
             >
               <div className="container !max-w-full flex items-center justify-between">
                 <div className="absolute w-full h-0 bg-stone-800 group-hover/nav-item:h-full transition-all duration-500 bottom-0 -z-10"></div>
-                <span className="text-3xl group-hover/nav-item:pl-4 transition-all duration-500">
+                <span className="text-3xl text-white group-hover/nav-item:text-stone-300 transition-all duration-500">
                   {label}
                 </span>
                 <svg
@@ -156,7 +156,7 @@ const Header: FC = () => {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="size-6"
+                  className="size-6 group-hover/nav-item:text-stone-300 transition-all duration-500"
                 >
                   <path
                     strokeLinecap="round"
@@ -165,9 +165,7 @@ const Header: FC = () => {
                   />
                 </svg>
               </div>
-              <div className="absolute w-full h-0 bg-stone-800 group-hover/nav-item:h-full transition-all duration-500 bottom-0 -z-10">
-
-              </div>
+              <div className="absolute w-full h-0 bg-white group-hover/nav-item:h-full transition-all duration-500 bottom-0 -z-10 "></div>
             </a>
           ))}
         </nav>
@@ -224,12 +222,18 @@ const Header: FC = () => {
                   />
                 </svg>
               </div>
-              <Button
-                variant="primary"
-                className="hidden md:inline-flex items-center"
-              >
-                Contato
-              </Button>
+              <a href="#contato">
+                <Button
+                  variant="primary"
+                  className={`hidden md:inline-flex items-center transition-all duration-500 ${
+                    isOpen
+                      ? "bg-white text-stone-600"
+                      : "bg-stone-600 text-white"
+                  }`}
+                >
+                  Contato
+                </Button>
+              </a>
             </div>
           </div>
         </div>

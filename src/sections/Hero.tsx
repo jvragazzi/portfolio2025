@@ -5,18 +5,24 @@ import heroImage from "@/assets/images/hero-image.png";
 import Image from "next/image";
 import Button from "@/components/Button";
 import SplitType from "split-type";
-import { useAnimate, motion, stagger, useScroll, useTransform } from "motion/react";
+import {
+  useAnimate,
+  motion,
+  stagger,
+  useScroll,
+  useTransform,
+} from "motion/react";
 
 const Hero: FC = () => {
   const [titleScope, titleAnimate] = useAnimate();
   const scrollingDiv = useRef<HTMLDivElement>(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: scrollingDiv,
-    offset: ['start end', 'end end']
-  })
+    offset: ["start end", "end end"],
+  });
 
-  const portraitWidth = useTransform(scrollYProgress, [0, 1], ['100%', '240%'])
+  const portraitWidth = useTransform(scrollYProgress, [0, 1], ["100%", "240%"]);
 
   useEffect(() => {
     new SplitType(titleScope.current, {
@@ -59,45 +65,47 @@ const Hero: FC = () => {
                   delay: 1.75,
                 }}
               >
-                <Button
-                  variant="secondary"
-                  iconAfter={
-                    <div className="overflow-hidden size-5">
-                      <div className="h-5 w-10 flex group-hover/button:-translate-x-1/2 transition-transform duration-500">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="currentColor"
-                          className="size-5"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"
-                          />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="currentColor"
-                          className="size-5"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"
-                          />
-                        </svg>
+                <a href="#projetos" className="scroll-smooth">
+                  <Button
+                    variant="secondary"
+                    iconAfter={
+                      <div className="overflow-hidden size-5">
+                        <div className="h-5 w-10 flex group-hover/button:-translate-x-1/2 transition-transform duration-500">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth="1.5"
+                            stroke="currentColor"
+                            className="size-5"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth="1.5"
+                            stroke="currentColor"
+                            className="size-5"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"
+                            />
+                          </svg>
+                        </div>
                       </div>
-                    </div>
-                  }
-                >
-                  <span>Veja Meus Projetos</span>
-                </Button>
+                    }
+                  >
+                    <span>Veja Meus Projetos</span>
+                  </Button>
+                </a>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: "100%" }}
@@ -107,15 +115,31 @@ const Hero: FC = () => {
                   delay: 2.2,
                 }}
               >
-                <Button variant="text">Download CV</Button>
+                <Button
+                  variant="text"
+                  className="hidden md:inline-flex items-center"
+                  onClick={() => {
+                    const link = document.createElement("a");
+                    link.href = "/curriculo.pdf";
+                    link.download = "JoaoVictorRagazzi_CV.pdf";
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
+                >
+                  Download CV
+                </Button>
               </motion.div>
             </div>
           </div>
         </div>
         <div className="md:col-span-5 relative">
-          <motion.div className="mt-20 md:mt-0 md:size-full md:absolute md:right-0 max-md:!w-full" style={{
-            width: portraitWidth,
-          }}>
+          <motion.div
+            className="mt-20 md:mt-0 md:size-full md:absolute md:right-0 max-md:!w-full"
+            style={{
+              width: portraitWidth,
+            }}
+          >
             <Image
               src={heroImage}
               alt="Minha foto de perfil"
@@ -124,10 +148,7 @@ const Hero: FC = () => {
           </motion.div>
         </div>
       </div>
-      <div
-        className="md:h-[200vh]"
-        ref={scrollingDiv}
-      ></div>
+      <div className="md:h-[200vh]" ref={scrollingDiv}></div>
     </section>
   );
 };

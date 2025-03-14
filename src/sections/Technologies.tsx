@@ -1,24 +1,53 @@
+"use client";
 import { FC } from "react";
-
-/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+import { motion } from "motion/react";
 
 const Technologies: FC = () => {
   return (
-    <section className="section" id="tecnologias">	  
-      <div>
+    <section className="section relative overflow-hidden" id="tecnologias">
+      <div className="w-full">
         <h2 className="text-4xl md:text-7xl lg:text-8xl flex flex-col uppercase overflow-hidden">
-          <span className="whitespace-nowrap">
+          {/* Primeiro span: Indo para a esquerda */}
+          <motion.span
+            className="whitespace-nowrap flex"
+            animate={{ x: ["0%", "-900%"] }}
+            transition={{
+              repeat: Infinity,
+              duration: 100,
+              ease: "linear",
+            }}
+          >
             HTML • CSS • JavaScript • C# • React.js • Angular • TypeScript •
             Node.js • Three.js • Bootstrap • SASS • jQuery • Cypress • Git •
             GitHub • APIs • AWS • SQL • NoSQL • DevOps • UI/UX • Figma • Pacote
-            Adobe
-          </span>
-          <span className="whitespace-nowrap self-end text-red-orange-500">
+            Adobe &nbsp;•
+            {/* Duplicado para continuidade infinita */}
+            HTML • CSS • JavaScript • C# • React.js • Angular • TypeScript •
+            Node.js • Three.js • Bootstrap • SASS • jQuery • Cypress • Git •
+            GitHub • APIs • AWS • SQL • NoSQL • DevOps • UI/UX • Figma • Pacote
+            Adobe •
+          </motion.span>
+
+          {/* Segundo span: Indo para a direita (Correção) */}
+          <motion.span
+            className="whitespace-nowrap flex text-red-orange-500"
+            animate={{ x: ["-900%", "0%"] }}
+            transition={{
+              repeat: Infinity,
+              duration: 100,
+              ease: "linear",
+            }}
+          >
             HTML • CSS • JavaScript • C# • React.js • Angular • TypeScript •
             Node.js • Three.js • Bootstrap • SASS • jQuery • Cypress • Git •
             GitHub • API&apos;s • AWS • SQL • NoSQL • DevOps • UI/UX • Figma •
-            Pacote Adobe
-          </span>
+            Pacote Adobe &nbsp;•
+            {/* Duplicado para continuidade infinita */}
+            HTML • CSS • JavaScript • C# • React.js • Angular • TypeScript •
+            Node.js • Three.js • Bootstrap • SASS • jQuery • Cypress • Git •
+            GitHub • API&apos;s • AWS • SQL • NoSQL • DevOps • UI/UX • Figma •
+            Pacote Adobe •
+          </motion.span>
         </h2>
       </div>
     </section>

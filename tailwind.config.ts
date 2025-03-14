@@ -27,7 +27,15 @@ const config: Config = {
       },
       colors: {
         "red-orange": {
-          500: 'color-mix(in srgb, theme("colors.red.500") 50%, theme("colors.orange.500") 50%)',
+          500: "#5a04ff",
+        },
+        stone: {
+          200: "#EDEDEF",
+          300: "rgba(90, 4, 255)",
+          400: "#22223E",
+          500: "#3B3B5A",
+          600: "#5a04ff",
+          900: "#22223E",
         },
       },
     },
