@@ -4,29 +4,40 @@ import image2 from "@/assets/images/project-2.jpg";
 import image3 from "@/assets/images/project-3.jpg";
 import image4 from "@/assets/images/project-4.jpg";
 import image5 from "@/assets/images/project-5.jpg";
+import image6 from "@/assets/images/project-6.png";
 import Image from "next/image";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const projects = [
   {
-    name: "Artisan Brew Co.",
+    name: "Me Indica um Filme",
     image: image1,
+    url: "https://meindicaumfilme.com",
   },
   {
-    name: "Wavelength Studios",
+    name: "Arteix",
     image: image2,
+    url: "https://arteix.eu",
   },
   {
-    name: "Nova Fitness",
+    name: "Galeria de Arte",
     image: image3,
+    url: "https://art-gallery-jvragazzi.vercel.app/",
   },
   {
-    name: "Urban Plates",
+    name: "E-Play Game Store",
     image: image4,
+    url: "https://eplay-jvragazzi.vercel.app/",
   },
   {
-    name: "Bloom Botanicals",
+    name: "Efood",
     image: image5,
+    url: "https://efood-jvragazzi.vercel.app/",
+  },
+  {
+    name: "Sistema Solar",
+    image: image6,
+    url: "https://solar-system3d-jvragazzi.vercel.app/",
   },
 ];
 
@@ -36,10 +47,12 @@ const Projects: FC = () => {
       <div className="container">
         <h2 className="text-4xl md:text-7xl lg:text-8xl">Projetos</h2>
         <div className="mt-10 md:mt-16 lg:mt-20">
-          {projects.map(({ name, image }) => (
+          {projects.map(({ name, image, url }) => (
             <a
-              href="#"
+              href={url} // 🔹 Direciona para o site do projeto
               key={name}
+              target="_blank"
+              rel="noopener noreferrer"
               className="border-t last:border-b border-stone-400 border-dotted py-6 md:py-8 lg:py-10 flex flex-col relative group/project"
             >
               <div className="absolute bottom-0 left-0 w-full h-0 group-hover/project:h-full transition-all duration-700 bg-stone-300"></div>
@@ -53,7 +66,9 @@ const Projects: FC = () => {
                 </div>
                 <div className="mt-8 md:mt-0 flex justify-between items-center md:grid md:[grid-template-columns:1fr_300px_max-content] md:gap-8">
                   <div className="lg:group-hover/project:pl-8 transition-all duration-700:">
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl transition-colors duration-300 group-hover/project:text-white">{name}</h3>
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl transition-colors duration-300 group-hover/project:text-white">
+                      {name}
+                    </h3>
                   </div>
                   <div className="relative">
                     <div className="absolute aspect-video w-full top-1/2 -translate-y-1/2 opacity-0 scale-90 group-hover/project:opacity-100 group-hover/project:scale-100 lg:group-hover/project:scale-110 transition-all duration-500 z-50">

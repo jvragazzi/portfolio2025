@@ -53,8 +53,8 @@ const Hero: FC = () => {
               className="text-5xl md:text-6xl lg:text-7xl mt-40 md:mt-0"
               ref={titleScope}
             >
-              Olá, eu sou o João! Desenvolvedor Front-end e Arquiteto e
-              Urbanista.
+              Olá, eu sou o <br /> <span className="font-bold">João</span>!
+              Desenvolvedor Front-end e Arquiteto e Urbanista.
             </motion.h1>
             <div className="flex flex-col md:flex-row md:items-center mt-10 items-start gap-6">
               <motion.div
