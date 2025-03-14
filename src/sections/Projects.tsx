@@ -4,7 +4,7 @@ import image2 from "../../public/images/project-2.jpg";
 import image3 from "../../public/images/project-3.jpg";
 import image4 from "../../public/images/project-4.jpg";
 import image5 from "../../public/images/project-5.jpg";
-import image6 from "../../public/images/project-6.png";
+import image6 from "../../public/images/project-6.jpg";
 import Image from "next/image";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
