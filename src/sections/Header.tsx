@@ -170,12 +170,12 @@ const Header: FC = () => {
           ))}
         </nav>
       </div>
-      <div className="fixed top-0 left-0 w-full mix-blend-difference backdrop-blur-md z-10">
+      <div className="fixed top-0 left-0 w-full bg-stone-200 border-b border-stone-400 z-10  ">
         <div className="container !max-w-full">
           <div className="flex justify-between h-20 items-center">
             <div>
               <a href="#intro">
-                <span className="text-xl font-bold uppercase text-white">
+                <span className="text-xl font-bold uppercase text-stone-400">
                   João&nbsp; Victor&nbsp; Ragazzi
                 </span>
               </a>
