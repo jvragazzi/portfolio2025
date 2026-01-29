@@ -35,7 +35,7 @@ const Intro: FC = () => {
   return (
     <section className="section mt-12 md:mt-16 lg:mt-20" ref={scope}>
       <div className="container">
-        <h2 className="text-4xl md:text-7xl lg:text-8xl lg:w-[95%]">
+        <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.1] md:leading-[1.05] lg:leading-[1] lg:w-[95%] max-w-[32ch] md:max-w-none">
           Com uma visão <span className="text-red-orange-500 font-bold">multidisciplinar</span>, transito do espaço físico ao digital,
           explorando formas, interações e novas maneiras de vivenciar a
           tecnologia.

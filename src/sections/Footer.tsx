@@ -53,7 +53,7 @@ const Footer: FC = () => {
             <div className="md:col-span-2">
               {/* O texto será animado palavra por palavra */}
               <h2
-                className="text-4xl md:text-7xl font-extralight"
+                className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-tight font-extralight"
                 ref={titleScope}
               >
                 Entre em contato, vamos trabalhar juntos!
@@ -128,7 +128,7 @@ const Footer: FC = () => {
                     key={label}
                     className="relative after:absolute after:left-0 after:bottom-0 after:w-full after:h-px after:bg-white after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
                   >
-                    <Button variant="text" className="text-lg">
+                    <Button variant="text" className="text-base sm:text-lg">
                       {label}
                     </Button>
                   </a>

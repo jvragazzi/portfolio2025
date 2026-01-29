@@ -50,7 +50,7 @@ const Hero: FC = () => {
             <motion.h1
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-5xl md:text-6xl lg:text-7xl mt-40 md:mt-0"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] md:leading-[1.02] lg:leading-[1] mt-32 md:mt-0 max-w-[18ch] md:max-w-[22ch]"
               ref={titleScope}
             >
               Olá, eu sou o <br /> <span className="font-bold">João</span>!

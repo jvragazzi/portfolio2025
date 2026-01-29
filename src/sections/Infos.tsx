@@ -33,7 +33,9 @@ const Infos: FC = () => {
   return (
     <section className="section" id="infos">
       <div className="container">
-        <h2 className="text-4xl md:text-7xl lg:text-8xl">Infos adicionais</h2>
+        <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-tight">
+          Infos adicionais
+        </h2>
         <div className="mt-10 md:mt-16 lg:mt-20">
           {infos.map(({ question, answer }, index) => (
             <div
@@ -49,7 +51,7 @@ const Infos: FC = () => {
                   index === selectedIndex && "lg:px-8"
                 )}
               >
-                <div className="text-2xl md:text-3xl lg:text-4xl transition-colors duration-500 group-hover/info:text-white">
+                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight transition-colors duration-500 group-hover/info:text-white">
                   {question}
                 </div>
                 <div
@@ -97,7 +99,10 @@ const Infos: FC = () => {
                     transition={{ duration: 0.7, ease: "easeOut" }}
                   >
                     {answer.split("\n\n").map((paragraph, i) => (
-                      <p key={i} className="text-xl mb-4">
+                      <p
+                        key={i}
+                        className="text-base sm:text-lg md:text-xl leading-relaxed mb-4"
+                      >
                         {paragraph}
                       </p>
                     ))}

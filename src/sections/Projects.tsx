@@ -45,7 +45,9 @@ const Projects: FC = () => {
   return (
     <section className="section" id="projetos">
       <div className="container">
-        <h2 className="text-4xl md:text-7xl lg:text-8xl">Projetos</h2>
+        <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-tight">
+          Projetos
+        </h2>
         <div className="mt-10 md:mt-16 lg:mt-20">
           {projects.map(({ name, image, url }) => (
             <a
@@ -66,7 +68,7 @@ const Projects: FC = () => {
                 </div>
                 <div className="mt-8 md:mt-0 flex justify-between items-center md:grid md:[grid-template-columns:1fr_300px_max-content] md:gap-8">
                   <div className="lg:group-hover/project:pl-8 transition-all duration-700:">
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl transition-colors duration-300 group-hover/project:text-white">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight transition-colors duration-300 group-hover/project:text-white">
                       {name}
                     </h3>
                   </div>
