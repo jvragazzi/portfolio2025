@@ -2,7 +2,7 @@ import { FC } from "react";
 import image1 from "../../public/images/project-1.jpg";
 import image2 from "../../public/images/project-2.jpg";
 import image3 from "../../public/images/aMORA.png";
-import image4 from "../../public/images/MORA+.png";
+import image4 from "../../public/images/conceitoe.png";
 import image5 from "../../public/images/functionfm.png";
 import image6 from "../../public/images/project-6.jpg";
 import Image from "next/image";
@@ -10,14 +10,14 @@ import Image from "next/image";
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const projects = [
   {
-    name: "More com aMORA",
-    image: image3,
-    url: "https://www.amora.com.br/",
+    name: "Conceito ê",
+    image: image4,
+    url: "https://conceitoe.com.br/",
   },
   {
-    name: "MORA+",
-    image: image4,
-    url: "https://app.moramais.com/",
+    name: "aMORA",
+    image: image3,
+    url: "https://www.amora.com.br/",
   },
   {
     name: "Function",
