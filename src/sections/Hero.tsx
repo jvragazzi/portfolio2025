@@ -25,12 +25,12 @@ const Hero: FC = () => {
   const portraitWidth = useTransform(scrollYProgress, [0, 1], ["100%", "240%"]);
 
   useEffect(() => {
-    new SplitType(titleScope.current, {
+    const splitTitle = new SplitType(titleScope.current, {
       types: "lines,words",
       tagName: "span",
     });
 
-    titleAnimate(
+    const titleAnimation = titleAnimate(
       titleScope.current.querySelectorAll(".word"),
       {
         transform: "translateY(0)",
@@ -40,21 +40,26 @@ const Hero: FC = () => {
         delay: stagger(0.2),
       }
     );
-  }, []);
+
+    titleAnimation.then(() => splitTitle.revert());
+
+    return () => splitTitle.revert();
+  }, [titleAnimate, titleScope]);
 
   return (
     <section>
-      <div className="grid md:grid-cols-12 md:h-screen items-stretch sticky top-0">
-        <div className="md:col-span-7 flex flex-col justify-center">
+      <div className="grid md:grid-cols-12 md:min-h-[100svh] items-stretch sticky top-0">
+        <div className="md:col-span-7 flex flex-col justify-center pt-20">
           <div className="container !max-w-full">
             <motion.h1
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] md:leading-[1.02] lg:leading-[1] mt-32 md:mt-0 max-w-[18ch] md:max-w-[22ch]"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] md:leading-[1.02] lg:leading-[1] mt-12 md:mt-0 max-w-[18ch] md:max-w-[22ch]"
               ref={titleScope}
             >
-              Olá, eu sou o <br /> <span className="font-bold">João</span>!
-              Desenvolvedor Front-end e Arquiteto e Urbanista.
+              <span className="whitespace-nowrap">Olá, eu sou o</span> <br />
+              <span className="font-bold">João</span>! Desenvolvedor Front-end
+              e Arquiteto e Urbanista.
             </motion.h1>
             <div className="flex flex-col md:flex-row md:items-center mt-10 items-start gap-6">
               <motion.div
